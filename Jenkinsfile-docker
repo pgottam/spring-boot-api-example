@@ -34,7 +34,7 @@ pipeline {
 		sh 'pwd'
 		sh 'ls'
 		sh 'git clone https://github.com/pgottam/yelb.git'
-                sh 'sleep 4000s'
+                sh 'sleep 4s'
 		sh 'cd yelb'
 		sh 'ls'
                 sh 'cd bootup'
