@@ -26,10 +26,12 @@ pipeline {
             }
             steps {
                 sh 'pwd'
+ 		sh 'rm -rf /var/jenkins_home/workspace/yelb_master/yelb'
                 sh 'mkdir /var/jenkins_home/workspace/yelb-deploy'
                 sh 'cd /var/jenkins_home/workspace/yelb-deploy'
 		sh 'git clone https://github.com/pgottam/yelb.git'
                 sh 'ls'
+ 		sh 'cd /var/jenkins_home/workspace/yelb_master'
 		sh 'docker login --username=$DOCKER_HUB_LOGIN_USR --password=$DOCKER_HUB_LOGIN_PSW'
                 sh './gradlew dockerPush'
             }
