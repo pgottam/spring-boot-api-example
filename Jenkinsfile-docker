@@ -31,7 +31,12 @@ pipeline {
                 sh 'mkdir yelb-deploy'
                 sh 'cd yelb-deploy'
 		sh 'git clone https://github.com/pgottam/yelb.git'
-                sh 'ls'
+                sh 'cd yelb/bootup'
+		sh 'sed -i -e 's/spring-boot-api-example/spring-boot-api-example:latest/g' boot.yaml
+		sh 'git add --all'
+		sh 'git commit -m "updated tag"
+		sh 'git push'
+		sh 'ls'
  		sh 'cd /var/jenkins_home/workspace/yelb_master'
 		sh 'docker login --username=$DOCKER_HUB_LOGIN_USR --password=$DOCKER_HUB_LOGIN_PSW'
                 sh './gradlew dockerPush'
