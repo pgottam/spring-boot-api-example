@@ -33,6 +33,7 @@ pipeline {
                 sh 'cd yelb-deploy'
 		sh 'git clone https://github.com/pgottam/yelb.git'
                 sh 'cd yelb'
+		sh 'ls'
                 sh 'cd bootup'
 		sh 'sed -i -e "s/spring-boot-api-example:latest/spring-boot-api-example:latest/g" boot.yaml'
 		sh 'git add --all'
