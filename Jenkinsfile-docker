@@ -27,8 +27,9 @@ pipeline {
             steps {
                 sh 'pwd'
  		sh 'rm -rf /var/jenkins_home/workspace/yelb_master/yelb'
-                sh 'mkdir /var/jenkins_home/workspace/yelb-deploy'
-                sh 'cd /var/jenkins_home/workspace/yelb-deploy'
+		sh 'cd /var/jenkins_home/workspace'
+                sh 'mkdir yelb-deploy'
+                sh 'cd yelb-deploy'
 		sh 'git clone https://github.com/pgottam/yelb.git'
                 sh 'ls'
  		sh 'cd /var/jenkins_home/workspace/yelb_master'
