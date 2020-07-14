@@ -48,19 +48,3 @@ dockerRun {
     clean true
 }
 
-import com.amazonaws.services.cloudformation.model.Capability
-
-aws {
-    region = findProperty('region') ?: 'us-east-1'
-}
-
-cloudFormation {
-    stackName "$project.name-stack"
-    stackParams([
-            SubnetID: findProperty('subnetId') ?: '',
-            ServiceName: project.name,
-            ServiceVersion: project.version,
-            DockerHubUsername: praveengottam
-    ])
-    templateFile project.file("ecs.yml")
-}
