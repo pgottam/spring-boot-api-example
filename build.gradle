@@ -60,7 +60,7 @@ cloudFormation {
             SubnetID: findProperty('subnetId') ?: '',
             ServiceName: project.name,
             ServiceVersion: project.version,
-            DockerHubUsername: dockerHubUsernameProperty
+            DockerHubUsername: praveengottam
     ])
     templateFile project.file("ecs.yml")
 }
