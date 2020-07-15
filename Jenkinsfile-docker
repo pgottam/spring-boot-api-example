@@ -29,6 +29,7 @@ pipeline {
  		        sh 'docker login --username=$DOCKER_HUB_LOGIN_USR --password=$DOCKER_HUB_LOGIN_PSW'
                 sh './gradlew dockerPush'
                 sh 'cd bootup'
+                sh 'ls'
                 sh 'sed -i -e "s/spring-boot-api-example:latest/spring-boot-api-example:latest/g" boot.yaml'
                 sh 'git add --all'
                 sh 'git commit -m "updated tag"'
