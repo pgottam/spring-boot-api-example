@@ -18,7 +18,7 @@ public class ThemeParkApplication  {
         return (args) -> {
             repository.save(new ThemeParkRide("Rollercoaster", "Train ride that speeds you along.", 5, 3));
             repository.save(new ThemeParkRide("Log flume", "Boat ride with plenty of splashes.", 3, 2));
-            repository.save(new ThemeParkRide("Teacups", "Spin dddride in a giant purple tea-cup", 21, 60));
+            repository.save(new ThemeParkRide("Teacups", "Spinning in a giant purple tea-cup", 22, 60));
         };
     }
 }
